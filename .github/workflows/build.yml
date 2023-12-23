@@ -12,10 +12,11 @@ jobs:
         fetch-depth: '0'
     - name: Tagging dry run
       id: taggerDryRun
-      uses: anothrNick/github-tag-action@1.36.0
+      uses: anothrNick/github-tag-action@1.67.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         WITH_V: false
+        DEFAULT_BUMP: patch
         DRY_RUN: true
 
     - name: echo new tag / version
@@ -28,3 +29,4 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         WITH_V: true
+        DEFAULT_BUMP: patch
